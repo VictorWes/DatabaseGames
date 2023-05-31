@@ -3,7 +3,7 @@ import {
   findaAllJogosService,
   findOneJogoService,
   deleteJogoService,
-  updateTeste,
+  updateJogoService,
 } from "../service/service.jogos.js";
 import User from "../models/Jogos.js";
 const createJogoController = async (req, res) => {
@@ -56,24 +56,7 @@ const findOneJogoController = async (req, res) => {
   }
 };
 
-const updateJogosController = async (req, res) => {
-  try {
-    let { id } = req.params;
-    let { nomeJogo, genero, lancamento } = req.body;
-    let findIdS = await User.findByPk(id);
 
-    await findIdS.update({
-      nomeJogo: nomeJogo,
-      genero: genero,
-      lancamento: lancamento,
-    });
-
-    await findIdS.save();
-    res.status(200).send({ message: "Dados alterados com sucesso!" });
-  } catch (err) {
-    res.status(500).send({ message: err.message });
-  }
-};
 
 const deleteJogoController = async (req, res) => {
   try {
@@ -87,13 +70,13 @@ const deleteJogoController = async (req, res) => {
   }
 };
 
-const updateTesteController = async (req, res) => {
+const updateJogosController = async (req, res) => {
   try {
     let { id } = req.params;
     let { nomeJogo } = req.body;
     let findIdS = await User.findByPk(id);
 
-    const atualizar = await updateTeste(nomeJogo, id);
+    const atualizar = await updateJogoService(nomeJogo, id);
 
     res.status(200).send({ message: "Teste passou com sucesso" });
   } catch (err) {
@@ -104,7 +87,7 @@ export {
   createJogoController,
   findaAllJogosController,
   findOneJogoController,
-  updateJogosController,
+
   deleteJogoController,
-  updateTesteController,
+  updateJogosController,
 };

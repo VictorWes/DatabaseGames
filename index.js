@@ -11,5 +11,5 @@ app.use("/create", routerJogos);
 app.use("/findall", routerJogos);
 app.use("/find", routerJogos);
 app.use("/jogo", routerJogos);
-app.use("/update", routerJogos);
+
 app.use("/delete", routerJogos);

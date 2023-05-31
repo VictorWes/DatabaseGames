@@ -3,15 +3,13 @@ import {
   createJogoController,
   findaAllJogosController,
   findOneJogoController,
-  updateJogosController,
   deleteJogoController,
-  updateTesteController,
+  updateJogosController,
 } from "../controller/controller.jogos.js";
 
 const routerJogos = Router();
 
-routerJogos.patch("/testea/:id", updateTesteController);
-routerJogos.patch("/jogo/:id", updateJogosController);
+routerJogos.patch("/testea/:id", updateJogosController);
 routerJogos.delete("/jogo/:id", deleteJogoController);
 routerJogos.post("/jogos", createJogoController);
 routerJogos.get("/jogos", findaAllJogosController);

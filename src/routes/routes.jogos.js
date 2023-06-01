@@ -5,6 +5,7 @@ import {
   findOneJogoController,
   deleteJogoController,
   updateJogosController,
+
 } from "../controller/controller.jogos.js";
 
 const routerJogos = Router();
@@ -14,5 +15,6 @@ routerJogos.delete("/jogo/:id", deleteJogoController);
 routerJogos.post("/jogos", createJogoController);
 routerJogos.get("/jogos", findaAllJogosController);
 routerJogos.get("/jogo/:id", findOneJogoController);
+
 
 export default routerJogos;

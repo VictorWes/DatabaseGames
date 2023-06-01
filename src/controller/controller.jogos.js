@@ -56,8 +56,6 @@ const findOneJogoController = async (req, res) => {
   }
 };
 
-
-
 const deleteJogoController = async (req, res) => {
   try {
     let { id } = req.params;
@@ -83,11 +81,13 @@ const updateJogosController = async (req, res) => {
     res.status(500).send({ message: err.message });
   }
 };
+
+
 export {
   createJogoController,
   findaAllJogosController,
   findOneJogoController,
-
   deleteJogoController,
   updateJogosController,
+ 
 };

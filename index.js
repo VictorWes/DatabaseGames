@@ -1,5 +1,7 @@
 import express from "express";
 import routerJogos from "./src/routes/routes.jogos.js";
+import dotenv from "dotenv";
+dotenv.config();
 const app = express();
 app.use(express.json());
 const port = 3000;
@@ -11,5 +13,5 @@ app.use("/create", routerJogos);
 app.use("/findall", routerJogos);
 app.use("/find", routerJogos);
 app.use("/jogo", routerJogos);
-
+app.use("/jogo", routerJogos);
 app.use("/delete", routerJogos);
